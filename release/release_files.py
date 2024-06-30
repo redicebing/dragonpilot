@@ -125,6 +125,11 @@ whitelist = [
   "opendbc/tesla_radar_bosch_generated.dbc",
   "opendbc/tesla_radar_continental_generated.dbc",
   "opendbc/tesla_powertrain.dbc",
+
+  # dp
+  "opendbc/toyota_zss.dbc",
+  "opendbc/toyota_brake_hold.dbc",
+  "opendbc/toyota_bsm.dbc",
 ]
 
 
