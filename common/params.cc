@@ -236,6 +236,7 @@ std::unordered_map<std::string, uint32_t> keys = {
     {"dp_toyota_enhanced_bsm", PERSISTENT},
     {"dp_toyota_auto_brake_hold", PERSISTENT},
     {"dp_device_offroad", CLEAR_ON_MANAGER_START},
+    {"dp_toyota_sng", PERSISTENT},
 };
 
 } // namespace
