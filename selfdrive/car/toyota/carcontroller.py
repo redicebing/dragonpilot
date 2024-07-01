@@ -143,7 +143,7 @@ class CarController(CarControllerBase):
       # pcm entered standstill or it's disabled
       self.standstill_req = False
     # dp - sng hack
-    if self.dp_toyota_sng:
+    if self._dp_toyota_sng:
       self.standstill_req = False
 
     self.last_standstill = CS.out.standstill
