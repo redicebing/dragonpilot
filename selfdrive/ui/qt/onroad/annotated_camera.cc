@@ -47,6 +47,7 @@ AnnotatedCameraWidget::AnnotatedCameraWidget(VisionStreamType type, QWidget* par
   rainbow_path = new RainbowPath;
   flight_panel = new FlightPanel;
   chevron_ext = new ChevronExt;
+  tt_indicator = new TeTooIndicator;
   #endif
 
 }
@@ -94,6 +95,7 @@ void AnnotatedCameraWidget::updateState(const UIState &s) {
   rainbow_path->update_states(s);
   flight_panel->update_states(s, is_metric);
   chevron_ext->update_states(s, is_metric);
+  tt_indicator->update_states(s, is_metric);
   #endif
 }
 
@@ -144,6 +146,11 @@ void AnnotatedCameraWidget::drawHud(QPainter &p) {
   drawText(p, rect().center().x(), 210, speedStr);
   p.setFont(InterFont(66));
   drawText(p, rect().center().x(), 290, speedUnit, 200);
+
+  #ifdef DP
+  tt_indicator->paint_speed_camera(p, rect());
+  tt_indicator->paint_maxspeed(p, set_speed_rect.topRight());
+  #endif
 
   p.restore();
 }
@@ -395,6 +402,7 @@ void AnnotatedCameraWidget::paintGL() {
     update_model(s, model);
 
     #ifdef DP
+    tt_indicator->paint_road_name(painter, rect().left(), rect().bottom(), rect().width());
     flight_panel->paint(painter, width(), height());
     #endif
 
