@@ -95,7 +95,7 @@ void AnnotatedCameraWidget::updateState(const UIState &s) {
   rainbow_path->update_states(s);
   flight_panel->update_states(s, is_metric);
   chevron_ext->update_states(s, is_metric);
-  tt_indicator->update_states(s, is_metric);
+  tt_indicator->update_states(s);
   #endif
 }
 
@@ -148,7 +148,7 @@ void AnnotatedCameraWidget::drawHud(QPainter &p) {
   drawText(p, rect().center().x(), 290, speedUnit, 200);
 
   #ifdef DP
-  tt_indicator->paint_speed_camera(p, rect());
+  tt_indicator->paint_speed_camera(p, rect(), speedStr);
   tt_indicator->paint_maxspeed(p, set_speed_rect.topRight());
   #endif
 
