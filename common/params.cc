@@ -240,7 +240,7 @@ std::unordered_map<std::string, uint32_t> keys = {
     {"dp_tetoo", PERSISTENT},
     {"dp_tetoo_data", PERSISTENT},
     {"dp_tetoo_gps", PERSISTENT},
-    {"dp_tetoo_data_taiwan_speed_camera", PERSISTENT},
+    {"dp_tetoo_taiwan_speed_camera", PERSISTENT},
 };
 
 } // namespace
