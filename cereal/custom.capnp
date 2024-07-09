@@ -45,6 +45,7 @@ struct TeToo @0xf35cc4560bbf6ec2 {
     bearing @4 :Float32;
     distance @5 :Float32;
     tags @6 :Text;
+    probability @7 :Float32;
   }
 
   enum FeatureType {
