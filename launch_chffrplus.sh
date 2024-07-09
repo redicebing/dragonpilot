@@ -76,6 +76,15 @@ function launch {
   # hardware specific init
   if [ -f /AGNOS ]; then
     agnos_init
+    # dp
+    if ! pip show "rtree" > /dev/null 2>&1; then
+      pip install "$DIR/dp_ext/selfdrive/tetoo/pkgs/Rtree-1.2.0-cp311-cp311-linux_aarch64.whl"
+    fi
+  else
+    # dp
+    if ! pip show "rtree" > /dev/null 2>&1; then
+      pip install "$DIR/dp_ext/selfdrive/tetoo/pkgs/Rtree-1.2.0-cp312-cp312-linux_x86_64.whl"
+    fi
   fi
 
   # write tmux scrollback to a file
