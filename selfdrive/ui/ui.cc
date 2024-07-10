@@ -252,6 +252,8 @@ UIState::UIState(QObject *parent) : QObject(parent) {
     "carControl", "controlsStateExt",
     // de2e
     "longitudinalPlanExt",
+    // TeToo
+    "teToo",
   });
 
   Params params;

@@ -75,6 +75,10 @@ def manager_init() -> None:
     ("dp_toyota_enhanced_bsm", "0"),
     ("dp_toyota_auto_brake_hold", "0"),
     ("dp_toyota_sng", "0"),
+    ("dp_tetoo", "0"),
+    ("dp_tetoo_data", ""),
+    ("dp_tetoo_gps", ""),
+    ("dp_tetoo_taiwan_speed_camera", "0"),
   ]
   if not PC:
     default_params.append(("LastUpdateTime", datetime.datetime.now(datetime.UTC).replace(tzinfo=None).isoformat().encode('utf8')))

@@ -224,7 +224,7 @@ Your vehicle must support openpilot longitudinal control.</source>
 Once activate, the lead vehicle indicator will display an &quot;A&quot;</source>
         <translation>當速度低於設定值時，openpilot將會切換到指定的「駕駛風格」。
 1 km/h = 0.62 mph。
-一旦啟用，前車指示將顯示一個「A」。</translation>
+一旦啟用，前車指示將顯示一個「A」</translation>
     </message>
     <message>
         <source>OFF</source>
@@ -524,6 +524,40 @@ Reboot Required.</source>
         <translation>啟用後，當 openpilot 未啟動且車輛靜止 3 秒後，openpilot 將啟動車輛的煞車保持功能（僅適用於 TSS2，使用風險自負！）。
 感謝 Alexandre Sato 的貢獻：https://github.com/AlexandreSato/
 需要重新啟動。</translation>
+    </message>
+    <message>
+        <source>Enable Stop and Go (SnG) Hack</source>
+        <translation>啟用 Stop and Go (SnG) 修正</translation>
+    </message>
+    <message>
+        <source>When enabled, openpilot will stop sending standstill signal when the car is fully stopped.
+ONLY WORK ON SOME VEHICLES.
+Reboot Required.</source>
+        <translation>啟用後，openpilot 在車輛完全停止時將不再發送停止信號。
+僅適用於部分車輛。
+需要重新啟動。</translation>
+    </message>
+    <message>
+        <source>Display Road Name</source>
+        <translation>顯示道路名稱</translation>
+    </message>
+    <message>
+        <source>When enabled, openpilot will display live road name using OpenStreetMap data.
+Internet required.</source>
+        <translation>啟用後，openpilot 將使用 OpenStreetMap 資料顯示即時道路名稱。
+需要網路連線。</translation>
+    </message>
+    <message>
+        <source>Display Speed Camera Warning (Taiwan)</source>
+        <translation>顯示測速照相警告（台灣）</translation>
+    </message>
+    <message>
+        <source>Tē-Tôo (Map)</source>
+        <translation>地圖</translation>
+    </message>
+    <message>
+        <source>When enabled, openpilot will display speed camera warning using offline database.</source>
+        <translation>啟用後，openpilot 將使用離線資料庫顯示測速照相警告。</translation>
     </message>
 </context>
 <context>
@@ -1321,6 +1355,26 @@ This may take up to a minute.</source>
     <message>
         <source>never</source>
         <translation>從未更新</translation>
+    </message>
+    <message>
+        <source>Onroad/Offroad Mode</source>
+        <translation>上線/離線 模式</translation>
+    </message>
+    <message>
+        <source>Go Offroad</source>
+        <translation>切換到離線</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to switch driving mode?</source>
+        <translation>您確定要切換模式嗎？</translation>
+    </message>
+    <message>
+        <source>CONFIRM</source>
+        <translation>確認</translation>
+    </message>
+    <message>
+        <source>Go Onroad</source>
+        <translation>切換到上線</translation>
     </message>
 </context>
 <context>

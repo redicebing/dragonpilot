@@ -91,6 +91,7 @@ _services: dict[str, tuple] = {
   # dp
   "controlsStateExt": (False, 100., 10),
   "longitudinalPlanExt": (False, 20., 5),
+  "teToo": (False, 5),
 }
 SERVICE_LIST = {name: Service(*vals) for
                 idx, (name, vals) in enumerate(_services.items())}
