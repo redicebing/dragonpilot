@@ -78,7 +78,8 @@ def manager_init() -> None:
     ("dp_tetoo", "0"),
     ("dp_tetoo_data", ""),
     ("dp_tetoo_gps", ""),
-    ("dp_tetoo_taiwan_speed_camera", "0"),
+    ("dp_tetoo_speed_camera_taiwan", "0"),
+    ("dp_tetoo_speed_camera_threshold", "0"),
   ]
   if not PC:
     default_params.append(("LastUpdateTime", datetime.datetime.now(datetime.UTC).replace(tzinfo=None).isoformat().encode('utf8')))
