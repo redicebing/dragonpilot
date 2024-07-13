@@ -242,6 +242,7 @@ std::unordered_map<std::string, uint32_t> keys = {
     {"dp_tetoo_gps", PERSISTENT},
     {"dp_tetoo_speed_camera_taiwan", PERSISTENT},
     {"dp_tetoo_speed_camera_threshold", PERSISTENT},
+    {"dp_long_de2e_road_condition", PERSISTENT},
 };
 
 } // namespace

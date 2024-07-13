@@ -6,6 +6,7 @@ dragonpilot [latest]
     * Road Name Display (Online OpenStreetMap)
     * Speed Camera Warning (Online OpenstreetMap: Untested)
     * Dedicated Speed Camera Warning (Taiwan)
+  * Dynamic End-to-End w/ Toggleable Road Condition Detection.
 
 dragonpilot [2024.07.01]
 =======================
