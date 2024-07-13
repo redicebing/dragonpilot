@@ -81,6 +81,8 @@ def manager_init() -> None:
     ("dp_tetoo_speed_camera_taiwan", "0"),
     ("dp_tetoo_speed_camera_threshold", "0"),
     ("dp_long_de2e_road_condition", "1"),  # on by default, depends on dp_long_de2e
+    ("dp_device_auto_shutdown", "0"),
+    ("dp_device_auto_shutdown_in", "30"),
   ]
   if not PC:
     default_params.append(("LastUpdateTime", datetime.datetime.now(datetime.UTC).replace(tzinfo=None).isoformat().encode('utf8')))
