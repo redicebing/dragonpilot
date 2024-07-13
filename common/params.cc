@@ -245,6 +245,7 @@ std::unordered_map<std::string, uint32_t> keys = {
     {"dp_long_de2e_road_condition", PERSISTENT},
     {"dp_device_auto_shutdown", PERSISTENT},
     {"dp_device_auto_shutdown_in", PERSISTENT},
+    {"dp_device_audible_alert_mode", PERSISTENT},
 };
 
 } // namespace

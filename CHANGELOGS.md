@@ -3,11 +3,12 @@ dragonpilot [latest]
 * Up to comma.ai openpilot master branch commit 01c2174d5968266b87f1d1fecefce5affaeaa624 (2024-07-02)
 * DP HIGHLIGHT:
   * (TESTING) Tē-Tôo / Map Module
-    * Road Name Display (Online OpenStreetMap)
-    * Speed Camera Warning (Online OpenstreetMap: Untested)
-    * Dedicated Speed Camera Warning (Taiwan)
+    * Road Name Display (Online using OSM)
+    * Speed Camera Warning (Online using OSM: Untested)
+    * Speed Camera Warning (Taiwan, Offline)
   * Dynamic End-to-End w/ Toggleable Road Condition Detection.
   * Device Auto Shutdown Toggle.
+  * Device Audible Alert Mode Toggle.
 
 dragonpilot [2024.07.01]
 =======================

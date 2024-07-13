@@ -83,6 +83,7 @@ def manager_init() -> None:
     ("dp_long_de2e_road_condition", "1"),  # on by default, depends on dp_long_de2e
     ("dp_device_auto_shutdown", "0"),
     ("dp_device_auto_shutdown_in", "30"),
+    ("dp_device_audible_alert_mode", "0"),
   ]
   if not PC:
     default_params.append(("LastUpdateTime", datetime.datetime.now(datetime.UTC).replace(tzinfo=None).isoformat().encode('utf8')))
