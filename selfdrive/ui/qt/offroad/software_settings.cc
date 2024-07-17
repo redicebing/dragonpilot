@@ -64,12 +64,11 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : ListWidget(parent) {
   connect(targetBranchBtn, &ButtonControl::clicked, [=]() {
     auto current = params.get("GitBranch");
     QStringList branches = QString::fromStdString(params.get("UpdaterAvailableBranches")).split(",");
-    if (!branches.isEmpty()) {
-      QString current = QString::fromStdString(params.get("CurrentBranch"));
-      int currentIndex = branches.indexOf(current);
-      if (currentIndex >= 0) {
-        branches.removeAt(currentIndex);
-        branches.insert(0, current);
+    for (QString b : {current.c_str()}) {
+      auto i = branches.indexOf(b);
+      if (i >= 0) {
+        branches.removeAt(i);
+        branches.insert(0, b);
       }
     }
 
