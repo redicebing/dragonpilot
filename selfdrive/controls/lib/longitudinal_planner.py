@@ -111,7 +111,7 @@ class LongitudinalPlanner:
 
   def update(self, sm):
     if self._frame % 50 == 0:
-      self._dynamic_endtoend_controller.set_enabled(self.params.get_bool("dp_long_de2e"))
+      self._dynamic_endtoend_controller.set_enabled(sm['controlsState'].experimentalMode and self.params.get_bool("dp_long_de2e"))
       self._pac.set_enabled(self.params.get_bool("dp_long_pac"))
 
     self._frame += 1
