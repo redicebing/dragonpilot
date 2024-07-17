@@ -1,4 +1,4 @@
-dragonpilot beta3 0.9.8
+dragonpilot beta3-sgo 0.9.8
 =======================
 * Up to comma.ai openpilot master branch commit cbee4421da690fa7b260f62c4a2c72ccacc6c902 (2024-07-14)
 * DP HIGHLIGHT:

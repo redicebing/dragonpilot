@@ -21095,7 +21095,7 @@ static PyObject *__pyx_pf_9selfdrive_6modeld_6models_15commonmodel_pyx_10ModelFr
  *       data = self.frame.prepare(buf.buf.buf_cl, buf.width, buf.height, buf.stride, buf.uv_offset, cprojection, output.mem)
  *     if not data:             # <<<<<<<<<<<<<<
  *       return None
- *     return np.asarray(<cnp.float32_t[:self.frame.buf_size]> data)
+ *     return np.asarray(<cnp.float32_t[:self.frame.MODEL_FRAME_SIZE]> data)
  */
   __pyx_t_3 = (!(__pyx_v_data != 0));
   if (__pyx_t_3) {
@@ -21104,7 +21104,7 @@ static PyObject *__pyx_pf_9selfdrive_6modeld_6models_15commonmodel_pyx_10ModelFr
  *       data = self.frame.prepare(buf.buf.buf_cl, buf.width, buf.height, buf.stride, buf.uv_offset, cprojection, output.mem)
  *     if not data:
  *       return None             # <<<<<<<<<<<<<<
- *     return np.asarray(<cnp.float32_t[:self.frame.buf_size]> data)
+ *     return np.asarray(<cnp.float32_t[:self.frame.MODEL_FRAME_SIZE]> data)
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
@@ -21115,14 +21115,14 @@ static PyObject *__pyx_pf_9selfdrive_6modeld_6models_15commonmodel_pyx_10ModelFr
  *       data = self.frame.prepare(buf.buf.buf_cl, buf.width, buf.height, buf.stride, buf.uv_offset, cprojection, output.mem)
  *     if not data:             # <<<<<<<<<<<<<<
  *       return None
- *     return np.asarray(<cnp.float32_t[:self.frame.buf_size]> data)
+ *     return np.asarray(<cnp.float32_t[:self.frame.MODEL_FRAME_SIZE]> data)
  */
   }
 
   /* "selfdrive/modeld/models/commonmodel_pyx.pyx":47
  *     if not data:
  *       return None
- *     return np.asarray(<cnp.float32_t[:self.frame.buf_size]> data)             # <<<<<<<<<<<<<<
+ *     return np.asarray(<cnp.float32_t[:self.frame.MODEL_FRAME_SIZE]> data)             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 47, __pyx_L1_error)
@@ -21136,7 +21136,7 @@ static PyObject *__pyx_pf_9selfdrive_6modeld_6models_15commonmodel_pyx_10ModelFr
   }
   __pyx_t_11 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_8 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_self->frame->buf_size)); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 47, __pyx_L1_error)
+  __pyx_t_8 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_self->frame->MODEL_FRAME_SIZE)); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_10 = __pyx_array_new(__pyx_t_8, sizeof(__pyx_t_5numpy_float32_t), PyBytes_AS_STRING(__pyx_t_11), (char *) "c", (char *) __pyx_v_data); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 47, __pyx_L1_error)
   __Pyx_GOTREF((PyObject *)__pyx_t_10);
