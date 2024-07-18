@@ -187,19 +187,19 @@ Reboot required.</source>
     </message>
     <message>
         <source>Enable Slow Down on Curve</source>
-        <translation>啟用彎道減速</translation>
+        <translation type="vanished">啟用彎道減速</translation>
     </message>
     <message>
         <source>When enabled, openpilot will reduce vehicle speed on curve road using algorithm found in taco2 branch.
 See https://github.com/commaai/openpilot/commit/7b97ddb3aacb222bfaf0b978c49cb5b756903ef7 for more information.
 Reboot required.</source>
-        <translation>啟用後，Openpilot將使用在 taco2 分支中找到的算法，在彎道上減少車輛速度。
+        <translation type="vanished">啟用後，Openpilot將使用在 taco2 分支中找到的算法，在彎道上減少車輛速度。
 詳細信息請查看https://github.com/commaai/openpilot/commit/7b97ddb3aacb222bfaf0b978c49cb5b756903ef7。
 需要重新啟動。</translation>
     </message>
     <message>
         <source>Enable Dynamic End-to-End Longitudinal Control</source>
-        <translation>啟用動態端到端縱向控制</translation>
+        <translation type="vanished">啟用動態端到端縱向控制</translation>
     </message>
     <message>
         <source>When enabled, openpilot will dynamically change between End-to-End or ACC mode.
@@ -510,7 +510,7 @@ Auto - Change lane automatically.</source>
     </message>
     <message>
         <source>When enabled, openpilot will dynamically change between End-to-End or ACC mode.</source>
-        <translation>啟用後，openpilot 將動態切換端到端或 ACC 模式。</translation>
+        <translation type="vanished">啟用後，openpilot 將動態切換端到端或 ACC 模式。</translation>
     </message>
     <message>
         <source>Enable Automatic Brake Hold</source>
@@ -544,7 +544,7 @@ Reboot Required.</source>
     <message>
         <source>When enabled, openpilot will display live road name using OpenStreetMap data.
 Internet required.</source>
-        <translation>啟用後，openpilot 將使用 OpenStreetMap 資料顯示即時道路名稱。
+        <translation type="vanished">啟用後，openpilot 將使用 OpenStreetMap 資料顯示即時道路名稱。
 需要網路連線。</translation>
     </message>
     <message>
@@ -558,6 +558,100 @@ Internet required.</source>
     <message>
         <source>When enabled, openpilot will display speed camera warning using offline database.</source>
         <translation>啟用後，openpilot 將使用離線資料庫顯示測速照相警告。</translation>
+    </message>
+    <message>
+        <source>Enable PAL (Personalized Accel Learner)</source>
+        <translation>啟用個性化加速控制 (PAL)</translation>
+    </message>
+    <message>
+        <source>When enabled, openpilot will learn from your acceleration habits.
+Reboot required.</source>
+        <translation>啟用後，openpilot 會學習您的加速習慣。</translation>
+    </message>
+    <message>
+        <source>Freeze PAL Parameters</source>
+        <translation>凍結 PAL 參數</translation>
+    </message>
+    <message>
+        <source>When enabled, openpilot will stop updating your PAL parameters.
+Reboot required.</source>
+        <translation>啟用後，openpilot 將停止更新您的 PAL 參數。</translation>
+    </message>
+    <message>
+        <source>PAL Launch Boost</source>
+        <translation>PAL 啟動加速</translation>
+    </message>
+    <message>
+        <source>Boost initial acceleration (up to 18 km/h ≈ 11 mph), limited to 2 m/s².</source>
+        <translation>提升初始加速（最高至 18 公里/小時 ≈ 11 英里/小時），限制為 2 米/秒²。</translation>
+    </message>
+    <message>
+        <source> %</source>
+        <translation> %</translation>
+    </message>
+    <message>
+        <source>Reset PAL Parameters</source>
+        <translation>重置 PAL 參數</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to reset PAL parameters?</source>
+        <translation>您確定要重置 PAL 參數嗎？</translation>
+    </message>
+    <message>
+        <source>Enable Auto Shutdown</source>
+        <translation>啟用自動關機</translation>
+    </message>
+    <message>
+        <source>When enabled, openpilot will shutdown the device automatically.
+Reboot required.</source>
+        <translation>啟用後，openpilot 會自動關閉設備。
+需要重新啟動。</translation>
+    </message>
+    <message>
+        <source>Auto Shutdown In</source>
+        <translation>自動關機倒數</translation>
+    </message>
+    <message>
+        <source>Adjust your shutdown waiting period.</source>
+        <translation>調整您的自動關機倒數時間。</translation>
+    </message>
+    <message>
+        <source> mins</source>
+        <translation> 分鐘</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>關閉</translation>
+    </message>
+    <message>
+        <source>Audible Alert Mode</source>
+        <translation>聲音警示模式</translation>
+    </message>
+    <message>
+        <source>Warning - Only emits sound when there is a warning.
+Off - Does not emit any sound at all.</source>
+        <translation>警告模式 - 只有在有警告時發出聲音。
+關閉 - 完全不發出任何聲音。</translation>
+    </message>
+    <message>
+        <source>When enabled, openpilot will display live road name using OpenStreetMap data.
+DO NOT USE IT WITH COMMA PRIME SUBSCRIPTION.
+Internet required.</source>
+        <translation>啟用後，openpilot 將使用 OpenStreetMap 數據顯示即時道路名稱。
+請勿在使用 Comma Prime 訂閱時使用此功能。
+需要網路連線。</translation>
+    </message>
+    <message>
+        <source>Speed Camera Warning Threshold</source>
+        <translation>超速照相警示閾值</translation>
+    </message>
+    <message>
+        <source>Only show the warning when the speed camera limit is within threshold (+/-) % of the vehicle speed or cruise speed or road limit speed.</source>
+        <translation>只在測速照相限速與「車速」或「巡航速度」或「道路限速」的閾值（±％）內時顯示警告。</translation>
     </message>
 </context>
 <context>
