@@ -19,6 +19,8 @@ LongCtrlState = car.CarControl.Actuators.LongControlState
 from openpilot.dp_ext.selfdrive.car.toyota.bsm.controller import BSMController
 # dp - for auto brake hold
 from openpilot.dp_ext.selfdrive.car.toyota.brake_hold.controller import BrakeHoldController
+# dp - for gas interceptor
+from openpilot.dp_ext.selfdrive.car.toyota.gas_interceptor.controller import ToyotaGasInterceptorController
 
 SteerControlType = car.CarParams.SteerControlType
 VisualAlert = car.CarControl.HUDControl.VisualAlert
@@ -60,6 +62,7 @@ class CarController(CarControllerBase):
     self.bsmc = BSMController(self.CP)
     self.bhc = BrakeHoldController()
     self._dp_toyota_sng = params.get_bool("dp_toyota_sng")
+    self.gi = ToyotaGasInterceptorController(self.CP)
 
   def update(self, CC, CS, now_nanos):
     actuators = CC.actuators
@@ -131,13 +134,15 @@ class CarController(CarControllerBase):
                                                           lta_active, self.frame // 2, torque_wind_down))
 
     # *** gas and brake ***
+    # dp - Gas Interceptor
+    self.gi.update_interceptor_cmd(CC.longActive, CS.out.vEgo, actuators.accel)
     if self.pcc.is_enabled():
       pcm_accel_cmd = self.pcc.get_pcm_accel_cmd(CC.longActive, CS.out.vEgo, CS.pcm_neutral_force, actuators.accel)
     else:
       pcm_accel_cmd = clip(actuators.accel, self.params.ACCEL_MIN, self.params.ACCEL_MAX)
 
     # on entering standstill, send standstill request
-    if CS.out.standstill and not self.last_standstill and (self.CP.carFingerprint not in NO_STOP_TIMER_CAR):
+    if CS.out.standstill and not self.last_standstill and (self.CP.carFingerprint not in NO_STOP_TIMER_CAR or self.gi.is_enabled()):
       self.standstill_req = True
     if CS.pcm_acc_status != 8:
       # pcm entered standstill or it's disabled
@@ -172,11 +177,20 @@ class CarController(CarControllerBase):
       if pcm_cancel_cmd and self.CP.carFingerprint in UNSUPPORTED_DSU_CAR:
         can_sends.append(toyotacan.create_acc_cancel_command(self.packer))
       elif self.CP.openpilotLongitudinalControl:
-        can_sends.append(toyotacan.create_accel_command(self.packer, pcm_accel_cmd, accel_raw, pcm_cancel_cmd, self.standstill_req, lead, CS.acc_type, fcw_alert,
-                                                        self.distance_button))
+        can_sends.append(toyotacan.create_accel_command(self.packer, pcm_accel_cmd, accel_raw, pcm_cancel_cmd,
+                                                        self.standstill_req, lead, CS.acc_type, fcw_alert, self.distance_button))
         self.accel = pcm_accel_cmd
       else:
         can_sends.append(toyotacan.create_accel_command(self.packer, 0, 0, pcm_cancel_cmd, False, lead, CS.acc_type, False, self.distance_button))
+
+    # dp - gas interceptor
+    if self.frame % 2 == 0 and self.gi.is_enabled() and self.CP.openpilotLongitudinalControl:
+      # send exactly zero if gas cmd is zero. Interceptor will send the max between read value and gas cmd.
+      # This prevents unexpected pedal range rescaling
+      gi_val = self.gi.get_can_sends(self.frame, self.gi.interceptor_cmd)
+      if gi_val:
+        can_sends.append(gi_val)
+        self.gas = self.gi.interceptor_cmd
 
     # *** hud ui ***
     if self.CP.carFingerprint != CAR.TOYOTA_PRIUS_V:

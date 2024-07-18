@@ -15,6 +15,8 @@ from openpilot.dp_ext.selfdrive.car.toyota.zss.controller import ZSSController
 from openpilot.dp_ext.selfdrive.car.toyota.bsm.state import BSMState
 from openpilot.dp_ext.selfdrive.car.toyota.brake_hold.state import BrakeHoldState
 
+from openpilot.dp_ext.selfdrive.car.gas_interceptor.state import GasInterceptorState
+
 SteerControlType = car.CarParams.SteerControlType
 
 # These steering fault definitions seem to be common across LKA (torque) and LTA (angle):
@@ -63,6 +65,7 @@ class CarState(CarStateBase):
     self.brake_hold_state = BrakeHoldState(CP.carFingerprint in TSS2_CAR)
     self.brakehold_governor = False
     self.stock_aeb = {}
+    self.gi = GasInterceptorState()
 
   def update(self, cp, cp_cam):
     ret = car.CarState.new_message()
@@ -75,7 +78,7 @@ class CarState(CarStateBase):
     ret.brakePressed = cp.vl["BRAKE_MODULE"]["BRAKE_PRESSED"] != 0
     ret.brakeHoldActive = cp.vl["ESP_CONTROL"]["BRAKE_HOLD_ACTIVE"] == 1
 
-    ret.gasPressed = cp.vl["PCM_CRUISE"]["GAS_RELEASED"] == 0
+    ret.gasPressed = self.gi.get_gas_pressed(805, cp.vl["PCM_CRUISE"]["GAS_RELEASED"] == 0)
 
     ret.wheelSpeeds = self.get_wheel_speeds(
       cp.vl["WHEEL_SPEEDS"]["WHEEL_SPEED_FL"],

@@ -11,6 +11,8 @@ from openpilot.selfdrive.car.honda.values import CAR, DBC, STEER_THRESHOLD, HOND
                                                  HondaFlags
 from openpilot.selfdrive.car.interfaces import CarStateBase
 
+from openpilot.dp_ext.selfdrive.car.gas_interceptor.state import GasInterceptorState
+
 TransmissionType = car.CarParams.TransmissionType
 
 
@@ -100,6 +102,9 @@ class CarState(CarStateBase):
     self.cruise_setting = 0
     self.v_cruise_pcm_prev = 0
 
+    # dp
+    self.gi = GasInterceptorState()
+
     # When available we use cp.vl["CAR_SPEED"]["ROUGH_CAR_SPEED_2"] to populate vEgoCluster
     # However, on cars without a digital speedometer this is not always present (HRV, FIT, CRV 2016, ILX and RDX)
     self.dash_speed_seen = False
@@ -188,7 +193,7 @@ class CarState(CarStateBase):
     ret.gearShifter = self.parse_gear_shifter(self.shifter_values.get(gear, None))
 
     ret.gas = cp.vl["POWERTRAIN_DATA"]["PEDAL_GAS"]
-    ret.gasPressed = ret.gas > 1e-5
+    ret.gasPressed = self.gi.get_gas_pressed(492, ret.gas > 1e-5)
 
     ret.steeringTorque = cp.vl["STEER_STATUS"]["STEER_TORQUE_SENSOR"]
     ret.steeringTorqueEps = cp.vl["STEER_MOTOR_TORQUE"]["MOTOR_TORQUE"]
