@@ -246,10 +246,11 @@ std::unordered_map<std::string, uint32_t> keys = {
     {"dp_device_auto_shutdown", PERSISTENT},
     {"dp_device_auto_shutdown_in", PERSISTENT},
     {"dp_device_audible_alert_mode", PERSISTENT},
-    {"dp_long_pac", PERSISTENT},
-    {"dp_long_pac_vals", PERSISTENT},
     {"dp_long_pal", PERSISTENT},
     {"dp_long_pal_vals", PERSISTENT},
+    {"dp_long_pal_freeze", PERSISTENT},
+    {"dp_long_pal_reset", CLEAR_ON_MANAGER_START},
+    {"dp_long_pal_launch_boost", PERSISTENT},
 };
 
 } // namespace
