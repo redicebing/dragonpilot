@@ -87,6 +87,7 @@ def manager_init() -> None:
     ("dp_long_pal", "0"),
     ("dp_long_pal_freeze", "0"),
     ("dp_long_pal_launch_boost", "0"),
+    ("dp_long_gas_interceptor", "0"),
   ]
   if not PC:
     default_params.append(("LastUpdateTime", datetime.datetime.now(datetime.UTC).replace(tzinfo=None).isoformat().encode('utf8')))

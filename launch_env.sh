@@ -20,3 +20,6 @@ if [ -f /data/media/0/dp_nav_mapbox_token ]; then
   fi
 fi
 ### dp_stock_end ###
+
+# this branch will always have pedal enabled
+echo -n 1 > /data/params/d/dp_long_gas_interceptor
