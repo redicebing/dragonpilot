@@ -251,6 +251,7 @@ std::unordered_map<std::string, uint32_t> keys = {
     {"dp_long_pal_freeze", PERSISTENT},
     {"dp_long_pal_reset", CLEAR_ON_MANAGER_START},
     {"dp_long_pal_launch_boost", PERSISTENT},
+    {"dp_vag_pq_steering_patch", PERSISTENT},
     {"dp_long_gas_interceptor", PERSISTENT},
 };
 

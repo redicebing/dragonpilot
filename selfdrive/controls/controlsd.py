@@ -63,11 +63,20 @@ class Controls:
     self.params = Params()
 
     # dp
-    self._dp_alka = self.params.get_bool("dp_alka")
+    try:
+      self._dp_alka = self.params.get_bool("dp_alka")
+    except:
+      self._dp_alka = False
     self._dp_alka_active = True
-    self._dp_lat_lane_change_assist_mode = int(self.params.get("dp_lat_lane_change_assist_mode"))
+    try:
+      self._dp_lat_lane_change_assist_mode = int(self.params.get("dp_lat_lane_change_assist_mode"))
+    except:
+      self._dp_lat_lane_change_assist_mode = 0
     self._dp_lat_lane_change_assist_mode_disable_active = False
-    self._dp_device_dm_unavailable = self.params.get_bool("dp_device_dm_unavailable")
+    try:
+      self._dp_device_dm_unavailable = self.params.get_bool("dp_device_dm_unavailable")
+    except:
+      self._dp_device_dm_unavailable = False
     self._dp_device_dm_unavailable_active = True if self._dp_device_dm_unavailable else False
 
     if CI is None:
