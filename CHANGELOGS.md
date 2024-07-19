@@ -7,6 +7,7 @@ dragonpilot [branch] [latest]
   * [NEW] [TESTING] Personalized Accel Learner (PAL) - Learn and apply accel habits from driver.
     * Ability to set a launch boost for initial acceleration  
     * Ability to freeze / reset learned parameters
+  * [NEW] Delete logs button (Software Panel)
 　　
 　　
 ===============
@@ -35,7 +36,7 @@ DP FEATURE LIST
     * Display On/Off Mode
     * Audible Alert Mode
     * Auto Shutdown w/ Timer
-    * On-Road / Off-Road Switcher
+    * On-Road / Off-Road Switcher (Software Panel)
     * Debug Console
   * Vehicle / Toyota
     * Stop and Go Mod
