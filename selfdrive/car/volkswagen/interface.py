@@ -51,7 +51,11 @@ class CarInterface(CarInterfaceBase):
       # ret.dashcamOnly = False
 
       # dp - For modified PQ steering
-      if Params().get_bool("dp_vag_pq_steering_patch"):
+      try:
+        dp_vag_pq_steering_patch = Params().get_bool("dp_vag_pq_steering_patch")
+      except:
+        dp_vag_pq_steering_patch = False
+      if dp_vag_pq_steering_patch:
         ret.networkLocation = NetworkLocation.gateway
         # patched steering should allow steer to 0.
         ret.minSteerSpeed = 0.

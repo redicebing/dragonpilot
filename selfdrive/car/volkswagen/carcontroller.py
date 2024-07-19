@@ -30,8 +30,15 @@ class CarController(CarControllerBase):
 
     # dp
     params = Params()
-    self.dp_vag_sng = params.get_bool("dp_vag_sng")
-    self.dp_vag_pq_steering_patch = Params().get_bool("dp_vag_pq_steering_patch")
+    try:
+      self.dp_vag_sng = params.get_bool("dp_vag_sng")
+    except:
+      self.dp_vag_sng = False
+    # this is not used in MQB, only PQ, checking status is 7 instead of 5
+    try:
+      self.dp_vag_pq_steering_patch = 7 if Params().get_bool("dp_vag_pq_steering_patch") else 5
+    except:
+      self.dp_vag_pq_steering_patch = 5
 
   def update(self, CC, CS, now_nanos):
     actuators = CC.actuators
