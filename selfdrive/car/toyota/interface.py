@@ -9,7 +9,6 @@ from openpilot.selfdrive.car.interfaces import CarInterfaceBase
 
 # dp
 from openpilot.common.params import Params
-from openpilot.dp_ext.selfdrive.car.gas_interceptor.controller import ENABLED as GI_ENABLED
 
 ButtonType = car.CarState.ButtonEvent.Type
 EventName = car.CarEvent.EventName
@@ -141,12 +140,13 @@ class CarInterface(CarInterfaceBase):
     if not ret.openpilotLongitudinalControl:
       ret.safetyConfigs[0].safetyParam |= Panda.FLAG_TOYOTA_STOCK_LONGITUDINAL
 
-    if GI_ENABLED:
+    ret.enableGasInterceptorDEPRECATED = 0x201 in fingerprint[0] and ret.openpilotLongitudinalControl
+    if ret.enableGasInterceptorDEPRECATED:
       ret.safetyConfigs[0].safetyParam |= Panda.FLAG_TOYOTA_GAS_INTERCEPTOR
 
     # min speed to enable ACC. if car can do stop and go, then set enabling speed
     # to a negative value, so it won't matter.
-    ret.minEnableSpeed = -1. if (stop_and_go or GI_ENABLED) else MIN_ACC_SPEED
+    ret.minEnableSpeed = -1. if (stop_and_go or ret.enableGasInterceptorDEPRECATED) else MIN_ACC_SPEED
 
     tune = ret.longitudinalTuning
     # dp
@@ -158,7 +158,7 @@ class CarInterface(CarInterfaceBase):
         ret.stopAccel = -2.0
 
     # dp - tune for GI
-    if GI_ENABLED:
+    if ret.enableGasInterceptorDEPRECATED:
       tune.kpBP = [0., 5., 20.]
       tune.kpV = [1.3, 1.0, 0.7]
       tune.kiBP = [0., 5., 12., 20., 27.]
@@ -203,7 +203,7 @@ class CarInterface(CarInterfaceBase):
       events.add(EventName.vehicleSensorsInvalid)
 
     if self.CP.openpilotLongitudinalControl:
-      if ret.cruiseState.standstill and not ret.brakePressed and not GI_ENABLED:
+      if ret.cruiseState.standstill and not ret.brakePressed and not self.CP.enableGasInterceptorDEPRECATED:
         events.add(EventName.resumeRequired)
       if self.CS.low_speed_lockout:
         events.add(EventName.lowSpeedLockout)

@@ -128,7 +128,7 @@ class CarController(CarControllerBase):
     self.last_steer = 0.0
 
     # dp
-    self.gi = GasInterceptorController()
+    self.gi = GasInterceptorController(CP.enableGasInterceptorDEPRECATED)
 
   def update(self, CC, CS, now_nanos):
     actuators = CC.actuators

@@ -59,10 +59,10 @@ class CarController(CarControllerBase):
     params = Params()
     self.dlc = DoorLockController()
     self.pcc = PCMCompensationController(CP, self.params, params.get_bool("dp_toyota_pcm_compensation"))
-    self.bsmc = BSMController(self.CP)
+    self.bsmc = BSMController(CP)
     self.bhc = BrakeHoldController()
     self._dp_toyota_sng = params.get_bool("dp_toyota_sng")
-    self.gi = ToyotaGasInterceptorController(self.CP)
+    self.gi = ToyotaGasInterceptorController(CP)
 
   def update(self, CC, CS, now_nanos):
     actuators = CC.actuators

@@ -5,9 +5,6 @@ from openpilot.selfdrive.controls.lib.drive_helpers import CONTROL_N
 from openpilot.selfdrive.controls.lib.pid import PIDController
 from openpilot.selfdrive.modeld.constants import ModelConstants
 
-# dp
-from openpilot.dp_ext.selfdrive.car.gas_interceptor.common import ENABLED as GI_ENABLED
-
 CONTROL_N_T_IDX = ModelConstants.T_IDXS[:CONTROL_N]
 
 LongCtrlState = car.CarControl.Actuators.LongControlState
@@ -51,7 +48,6 @@ class LongControl:
                              (CP.longitudinalTuning.kiBP, CP.longitudinalTuning.kiV),
                              k_f=CP.longitudinalTuning.kf, rate=1 / DT_CTRL)
     self.last_output_accel = 0.0
-    self.dp_gi_enabled = GI_ENABLED
 
   def reset(self):
     self.pid.reset()
@@ -62,7 +58,7 @@ class LongControl:
     self.pid.pos_limit = accel_limits[1]
 
     # dp - Ignore cruise standstill if car has a gas interceptor
-    cruise_standstill = CS.cruiseState.standstill and not self.dp_gi_enabled
+    cruise_standstill = CS.cruiseState.standstill and not self.CP.enableGasInterceptorDEPRECATED
 
     self.long_control_state = long_control_state_trans(self.CP, active, self.long_control_state, CS.vEgo,
                                                        should_stop, CS.brakePressed,

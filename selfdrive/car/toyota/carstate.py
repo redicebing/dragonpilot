@@ -65,7 +65,7 @@ class CarState(CarStateBase):
     self.brake_hold_state = BrakeHoldState(CP.carFingerprint in TSS2_CAR)
     self.brakehold_governor = False
     self.stock_aeb = {}
-    self.gi = GasInterceptorState()
+    self.gi = GasInterceptorState(CP.enableGasInterceptorDEPRECATED)
 
   def update(self, cp, cp_cam):
     ret = car.CarState.new_message()
