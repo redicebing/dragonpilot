@@ -7,7 +7,7 @@ dragonpilot [branch] [latest]
   * [NEW] [TESTING] Personalized Accel Learner (PAL) - Learn and apply accel habits from driver.
     * Ability to set a launch boost for initial acceleration  
     * Ability to freeze / reset learned parameters
-  * [NEW] Delete logs button (Software Panel)
+  * [NEW] Delete logs button (Device Panel)
   * [NEW] [VAG] Patch for Modified PQ Platform
 　　
 　　

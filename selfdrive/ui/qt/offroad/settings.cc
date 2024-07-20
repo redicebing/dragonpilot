@@ -208,6 +208,17 @@ DevicePanel::DevicePanel(SettingsWindow *parent) : ListWidget(parent) {
   });
   addItem(pair_device);
 
+  // dp delete logs btn
+  auto dp_delete_logs_btn = new ButtonControl(tr("Delete All Logs"), tr("DELETE"));
+  connect(dp_delete_logs_btn, &ButtonControl::clicked, [&]() {
+    if (ConfirmationDialog::confirm(tr("Are you sure you want to delete all logs?"), tr("DELETE"), this)) {
+      #ifdef QCOM2
+      std::system("rm -fr /data/media/0/realdata/*");
+      #endif
+    }
+  });
+  addItem(dp_delete_logs_btn);
+
   // offroad-only buttons
   if (!params.getBool("dp_device_dm_unavailable")) {
   auto dcamBtn = new ButtonControl(tr("Driver Camera"), tr("PREVIEW"),
