@@ -153,7 +153,7 @@ class CarInterface(CarInterfaceBase):
     if dp_toyota_pcm_compensation:
       # on stock Toyota this is -2.5
       if candidate in TSS2_CAR:
-        ret.stopAccel = -1.2
+        ret.stopAccel = -1.6
       else:
         ret.stopAccel = -2.0
 
