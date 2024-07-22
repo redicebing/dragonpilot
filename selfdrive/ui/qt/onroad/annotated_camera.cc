@@ -98,6 +98,10 @@ void AnnotatedCameraWidget::updateState(const UIState &s) {
   chevron_ext->update_states(s, is_metric);
   tt_indicator->update_states(s);
   #endif
+  if (sm.updated("lateralPlan")) {
+    auto lat_plan = sm["lateralPlan"].getLateralPlan();
+    dp_lat_lane_priority_mode_active = lat_plan.getUseLaneLines();
+  }
 }
 
 void AnnotatedCameraWidget::drawHud(QPainter &p) {
@@ -201,7 +205,8 @@ void AnnotatedCameraWidget::drawLaneLines(QPainter &painter, const UIState *s) {
 
   // lanelines
   for (int i = 0; i < std::size(scene.lane_line_vertices); ++i) {
-    painter.setBrush(QColor::fromRgbF(1.0, 1.0, 1.0, std::clamp<float>(scene.lane_line_probs[i], 0.0, 0.7)));
+    bool green = dp_lat_lane_priority_mode_active && (i == 1 || i == 2);
+    painter.setBrush(QColor::fromRgbF((green? 0.0 : 1.0), 1.0, (green? 0.0 : 1.0), std::clamp<float>(scene.lane_line_probs[i], 0.0, 0.7)));
     painter.drawPolygon(scene.lane_line_vertices[i]);
   }
 

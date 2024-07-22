@@ -254,6 +254,8 @@ UIState::UIState(QObject *parent) : QObject(parent) {
     "longitudinalPlanExt",
     // TeToo
     "teToo",
+    // lane priority mode
+    "lateralPlan",
   });
 
   Params params;
