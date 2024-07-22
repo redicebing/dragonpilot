@@ -639,7 +639,7 @@ class Controls:
 
       # dp - lane line priority mode
       if self._dp_lat_lane_priority_mode and self.sm['lateralPlan'].useLaneLines:
-        self.desired_curvature, _ = get_lag_adjusted_curvature(self.CP, CS.vEgo, self.sm['lateralPlan'].psis, self.sm['lateralPlan'].curvatures)
+        self.desired_curvature = get_lag_adjusted_curvature(self.CP, CS.vEgo, self.sm['lateralPlan'].psis, self.sm['lateralPlan'].curvatures)
       else:
         # Steering PID loop and lateral MPC
         self.desired_curvature = clip_curvature(CS.vEgo, self.desired_curvature, model_v2.action.desiredCurvature)
