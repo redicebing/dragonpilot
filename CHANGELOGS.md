@@ -7,8 +7,11 @@ dragonpilot [branch] [latest]
   * [NEW] [TESTING] Personalized Accel Learner (PAL) - Learn and apply accel habits from driver.
     * Ability to set a launch boost for initial acceleration  
     * Ability to freeze / reset learned parameters
-  * [NEW] Delete logs button (Software Panel)
+  * [NEW] Delete logs button (Device Panel)
   * [NEW] [VAG] Patch for Modified PQ Platform
+  * [NEW] Lane Priority Mode
+    * Ability to use Lane Planner for lane centering instead of end to end (when lane probs are high, logic by sunnyhaibin).
+    * Ability to set speed limit and only activate at high speed (e.g. highway use only)
 　　
 　　
 ===============

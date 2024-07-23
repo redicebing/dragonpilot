@@ -394,6 +394,7 @@ if arch == "larch64":
 SConscript(['third_party/SConscript'])
 
 SConscript(['selfdrive/SConscript'])
+SConscript(['dp_ext/selfdrive/controls/lib/lateral_mpc_lib/SConscript'])
 
 if Dir('#tools/cabana/').exists() and GetOption('extras'):
   SConscript(['tools/replay/SConscript'])

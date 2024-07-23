@@ -29,17 +29,6 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : ListWidget(parent) {
   versionLbl = new LabelControl(tr("Current Version"), "");
   addItem(versionLbl);
 
-  // dp delete logs btn
-  auto dp_delete_logs_btn = new ButtonControl(tr("Delete All Logs"), tr("DELETE"));
-  connect(dp_delete_logs_btn, &ButtonControl::clicked, [&]() {
-    if (ConfirmationDialog::confirm(tr("Are you sure you want to delete all logs?"), tr("DELETE"), this)) {
-      #ifdef QCOM2
-      std::system("rm -fr /data/media/0/realdata/*");
-      #endif
-    }
-  });
-  addItem(dp_delete_logs_btn);
-
   // dp on/off btn
   onOffBtn = new ButtonControl(tr("Onroad/Offroad Mode"), tr("Go Offroad"));
   connect(onOffBtn, &ButtonControl::clicked, [&]() {
