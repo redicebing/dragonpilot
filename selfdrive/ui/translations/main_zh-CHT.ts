@@ -199,7 +199,7 @@ Reboot required.</source>
     </message>
     <message>
         <source>Enable Dynamic End-to-End Longitudinal Control</source>
-        <translation type="vanished">啟用動態端到端縱向控制</translation>
+        <translation>啟用動態端到端縱向控制</translation>
     </message>
     <message>
         <source>When enabled, openpilot will dynamically change between End-to-End or ACC mode.
@@ -510,7 +510,7 @@ Auto - Change lane automatically.</source>
     </message>
     <message>
         <source>When enabled, openpilot will dynamically change between End-to-End or ACC mode.</source>
-        <translation type="vanished">啟用後，openpilot 將動態切換端到端或 ACC 模式。</translation>
+        <translation>啟用後，openpilot 將動態切換端到端或 ACC 模式。</translation>
     </message>
     <message>
         <source>Enable Automatic Brake Hold</source>
@@ -652,6 +652,54 @@ Internet required.</source>
     <message>
         <source>Only show the warning when the speed camera limit is within threshold (+/-) % of the vehicle speed or cruise speed or road limit speed.</source>
         <translation>只在測速照相限速與「車速」或「巡航速度」或「道路限速」的閾值（±％）內時顯示警告。</translation>
+    </message>
+    <message>
+        <source>Patch for modified PQ Platform</source>
+        <translation>使用 PQ 平台 (改過 EPS) 補丁</translation>
+    </message>
+    <message>
+        <source>Reboot Required</source>
+        <translation>需要重新啟動</translation>
+    </message>
+    <message>
+        <source>Enable Lane Priority Mode</source>
+        <translation>啟用車道優先模式</translation>
+    </message>
+    <message>
+        <source>When enabled, openpilot will use lane lines for lateral control, fallback to laneless mode automatically when lane lines probabilities are low.</source>
+        <translation>啟用後，openpilot 將使用車道線進行橫向控制，當車道線概率低時，會自動切換到無車道 (端到端) 模式。</translation>
+    </message>
+    <message>
+        <source>Only When Drive Above</source>
+        <translation>僅當行駛速度超過</translation>
+    </message>
+    <message>
+        <source>Any - Use Lane Line when available.
+*Number* - Use Lane Line when available and when vehicle speed is above the *number*.
+1 km/h = 0.62 mph.</source>
+        <translation>任何 - 若有車道線，則使用車道線。
+*數字* - 若有車道線且車速超過該數字，則使用車道線。
+1 公里/小時 = 0.62 英里/小時。</translation>
+    </message>
+    <message>
+        <source>Camera Offset</source>
+        <translation>鏡頭偏移</translation>
+    </message>
+    <message>
+        <source>Adjust your camera position if your device is not mounted as per guidance.</source>
+        <translation>微調鏡頭偏移。</translation>
+    </message>
+    <message>
+        <source> cm</source>
+        <translation> 公分</translation>
+    </message>
+    <message>
+        <source>Enable Road Condition Detection</source>
+        <translation>啟用道路狀況檢測</translation>
+    </message>
+    <message>
+        <source>When enabled, Dynamic End-to-End will check road condition such as traffic signals, large curve, stop sign.</source>
+        <translation>啟用後，動態端到端將檢查道路狀況，例如交通信號、大彎道、停車標誌。</translation>
     </message>
 </context>
 <context>
@@ -810,6 +858,18 @@ Internet required.</source>
     <message>
         <source>PAIR</source>
         <translation>配對</translation>
+    </message>
+    <message>
+        <source>Delete All Logs</source>
+        <translation>刪除所有日誌記錄</translation>
+    </message>
+    <message>
+        <source>DELETE</source>
+        <translation>刪除</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete all logs?</source>
+        <translation>您確定要刪除全部的記錄嗎？</translation>
     </message>
 </context>
 <context>
