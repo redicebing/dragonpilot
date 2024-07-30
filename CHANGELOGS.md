@@ -14,6 +14,9 @@ dragonpilot [branch] [latest]
     * Performance improvement
   * [UPDATE] TeToo
     * Updated Taiwan Speed Camera Database (2024-07-11)
+  * [UPDATE] Personalized Accel Learner (PAL)
+    * Adjusted learning freq
+    * Save learnt values every minute
 　　
 　　
 ===============
