@@ -2,6 +2,7 @@ dragonpilot [branch] [latest]
 =======================
 * Up to comma.ai openpilot master branch commit 71ad5a8deef595d3e0cb01d3e8a4d8ced1ae5085 (2024-07-25)
 * DP HIGHLIGHT:
+  * [NEW] Disable Auto Update Toggle (Software Panel)
   * [UPDATE] Flight Panel
     * Performance improvement
     * Removed shade
