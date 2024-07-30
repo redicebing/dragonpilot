@@ -1,6 +1,14 @@
 dragonpilot [branch] [latest]
 =======================
 * Up to comma.ai openpilot master branch commit 71ad5a8deef595d3e0cb01d3e8a4d8ced1ae5085 (2024-07-25)
+* DP HIGHLIGHT:
+  * [UPDATE] Flight Panel
+    * Performance improvement
+    * Removed shade
+    * Use green + yellow colour scheme
+    * Moved below road name
+    * Less elements on the screen
+    * Rotate compass instead of the indicator
 　　
 　　
 ===============

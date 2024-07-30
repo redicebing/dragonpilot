@@ -409,8 +409,8 @@ void AnnotatedCameraWidget::paintGL() {
     update_model(s, model);
 
     #ifdef DP
-    tt_indicator->paint_road_name(painter, rect().left(), rect().bottom(), rect().width());
     flight_panel->paint(painter, width(), height());
+    tt_indicator->paint_road_name(painter, rect().left(), rect().bottom(), rect().width());
     #endif
 
     drawLaneLines(painter, s);
