@@ -10,6 +10,8 @@ dragonpilot [branch] [latest]
     * Moved below road name
     * Less elements on the screen
     * Rotate compass instead of the indicator
+  * [UPDATE] Rainbow Path
+    * Performance improvement
 　　
 　　
 ===============
