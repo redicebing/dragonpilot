@@ -12,6 +12,8 @@ dragonpilot [branch] [latest]
     * Rotate compass instead of the indicator
   * [UPDATE] Rainbow Path
     * Performance improvement
+  * [UPDATE] TeToo
+    * Updated Taiwan Speed Camera Database (2024-07-11)
 　　
 　　
 ===============
@@ -36,7 +38,7 @@ DP FEATURE LIST
     * Rainbow Path
     * Accel/Decel Indicator
     * Blinker / Brake Indicator
-  * Common / Tē-Tôo (Map)
+  * Common / TeToo (Map / Tē-Tôo)
     * [TESTING] Display Road Name (Global, Online OSM)
     * [TESTING] Display Speed Camera Warning (Global, Online OSM)
     * [TESTING] Display Speed Camera Warning for Taiwan (Offline DB)
@@ -94,7 +96,7 @@ DP FEATURE LIST
     * Rainbow Path
     * Accel/Decel Indicator
     * Blinker / Brake Indicator
-  * Common / Tē-Tôo (Map)
+  * Common / TeToo (Map / Tē-Tôo)
     * [TESTING] Display Road Name (Global, Online OSM)
     * [TESTING] Display Speed Camera Warning (Global, Online OSM)
     * [TESTING] Display Speed Camera Warning for Taiwan (Offline DB)
