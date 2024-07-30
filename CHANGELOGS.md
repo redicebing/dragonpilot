@@ -32,8 +32,8 @@ DP FEATURE LIST
       * Ability to set a launch boost for initial acceleration
       * Ability to freeze / reset learned parameters
   * Common / UI
-    * Display Flight Panel
-    * Display Rainbow Path
+    * Flight Panel
+    * Rainbow Path
     * Accel/Decel Indicator
     * Blinker / Brake Indicator
   * Common / Tē-Tôo (Map)
@@ -90,8 +90,8 @@ DP FEATURE LIST
     * On-Screen Driving Personality Button
     * Speed-based Alternative Driving Personality Mode
   * Common / UI
-    * Display Flight Panel
-    * Display Rainbow Path
+    * Flight Panel
+    * Rainbow Path
     * Accel/Decel Indicator
     * Blinker / Brake Indicator
   * Common / Tē-Tôo (Map)
