@@ -17,6 +17,8 @@ dragonpilot [branch] [latest]
   * [UPDATE] Personalized Accel Learner (PAL)
     * Adjusted learning freq
     * Save learnt values every minute
+  * [UPDATE] Dynamic End-to-End Controller
+    * DANGEOROUS_TTC reduce to 1.2s to rely on ACC mode more.
 　　
 　　
 ===============
