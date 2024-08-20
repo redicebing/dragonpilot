@@ -287,7 +287,7 @@ Reboot required.</source>
         <translation>行駛時停止記錄上傳</translation>
     </message>
     <message>
-        <source>When enabled, openpilot will not upload driving log/videos to comma connect when driving. 
+        <source>When enabled, openpilot will not upload driving log/videos to comma connect when driving.
 Reboot required.</source>
         <translation>啟用後，openpilot 在行駛時不會將駕駛日誌或影片上傳至 comma connect。
 需要重新啟動。</translation>
@@ -519,7 +519,7 @@ Auto - Change lane automatically.</source>
     <message>
         <source>When enabled, openpilot will activate vehicle brake hold after 3 secs at standstill while openpilot is not engaging.
 (ONLY WORKS ON TSS2, USE AT YOUR OWN RISK!!).
-Credit to AlexandreSato: https://github.com/AlexandreSato/ 
+Credit to AlexandreSato: https://github.com/AlexandreSato/
 Reboot Required.</source>
         <translation>啟用後，當 openpilot 未啟動且車輛靜止 3 秒後，openpilot 將啟動車輛的煞車保持功能（僅適用於 TSS2，使用風險自負！）。
 感謝 Alexandre Sato 的貢獻：https://github.com/AlexandreSato/
@@ -1398,14 +1398,6 @@ This may take up to a minute.</source>
     <message>
         <source>PANDA</source>
         <translation>車輛通訊</translation>
-    </message>
-    <message>
-        <source>GPS</source>
-        <translation>GPS</translation>
-    </message>
-    <message>
-        <source>SEARCH</source>
-        <translation type="vanished">車輛通訊</translation>
     </message>
     <message>
         <source>--</source>
