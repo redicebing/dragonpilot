@@ -227,7 +227,7 @@ class CarController:
           pump_on, self.last_pump_ts = brake_pump_hysteresis(apply_brake, self.apply_brake_last, self.last_pump_ts, ts)
 
           pcm_override = True
-          can_sends.append(hondacan.create_brake_command(self.packer, apply_brake, pump_on,
+          # can_sends.append(hondacan.create_brake_command(self.packer, apply_brake, pump_on,
                                                          pcm_override, pcm_cancel_cmd, fcw_display,
                                                          self.CP.carFingerprint, CS.stock_brake))
           self.apply_brake_last = apply_brake
@@ -244,7 +244,7 @@ class CarController:
               self.gas = clip(gas_mult * (gas - brake + wind_brake * 3 / 4), 0., 1.)
             else:
               self.gas = 0.0
-            can_sends.append(create_gas_interceptor_command(self.packer, self.gas, self.frame // 2))
+            # can_sends.append(create_gas_interceptor_command(self.packer, self.gas, self.frame // 2))
 
     # Send dashboard UI commands.
     if self.frame % 10 == 0:
